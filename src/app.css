@@ -1,2 +1,6 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
+
+
+.bg-prism-gray {
+    background-color: #F4F5F6;
+}
