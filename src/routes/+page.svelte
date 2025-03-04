@@ -1,21 +1,27 @@
 <script lang="ts">
 	export let data;
 
+    import { getLocale } from '$lib/paraglide/runtime';
+	import { page } from '$app/state';
+	import * as m from '$lib/paraglide/messages';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import { calculateReadingTime } from '$lib/utils/readingTime.js';
+
+    const locale = getLocale();
 </script>
 
 <div>
 	<!-- Hero section -->
 	<section class="mb-5 flex items-start justify-between bg-white px-7 py-6 dark:bg-gray-800">
 		<div class="max-w-xl">
-			<h1 class="mb-4 text-3xl font-bold">Prism Blog</h1>
+			<h1 class="mb-4 text-3xl font-bold">
+				{m.main_title()}
+			</h1>
 			<p class="mb-6">
-				A collection of thoughts, ideas, and discoveries about web development, programming, and
-				technology.
+				{m.main_slogan()}
 			</p>
 			<a href="/about" class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
-				About author
+				{m.main_about_author()}
 			</a>
 		</div>
 
@@ -26,7 +32,9 @@
 
 	<!-- Recent posts -->
 	<section class="bg-white px-7 py-6 dark:bg-gray-800">
-		<h2 class="mb-7 text-2xl font-bold">Recent posts</h2>
+		<h2 class="mb-7 text-2xl font-bold">
+			{m.main_recent_posts()}
+		</h2>
 
 		<div class="space-y-8">
 			{#each data.posts as post}
@@ -37,11 +45,11 @@
 						<span class="dark:text-white">Mock image</span>
 					</div>
 
-					<div class="mb-2 flex flex-col text-sm">
+					<div class="mb-2 flex flex-col">
 						<div class="mb-2 flex items-center">
 							<span class="mr-6 flex items-center">
 								<Icon name="calendar" className="h-4 w-4 mr-2" />
-								{new Date(post.created_at).toLocaleDateString('uk-UA', {
+								{new Date(post.created_at).toLocaleDateString(locale, {
 									year: 'numeric',
 									month: 'long',
 									day: 'numeric'
@@ -50,7 +58,7 @@
 
 							<span class="flex items-center">
 								<Icon name="clock" className="h-4 w-4 mr-2" />
-								{calculateReadingTime(post.content)} min
+								{calculateReadingTime(post.content)} {m.time_minutes()}
 							</span>
 						</div>
 						<h3 class="mb-2 text-xl font-semibold">
@@ -63,7 +71,9 @@
 			{/each}
 		</div>
 		<div class="mt-8">
-			<a href="/blog" class="text-blue-500 hover:underline">View all posts</a>
+			<a href="/blog" class="text-blue-500 hover:underline">
+				{m.main_view_all_posts()}
+			</a>
 		</div>
 	</section>
 </div>

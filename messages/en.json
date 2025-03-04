@@ -1,0 +1,35 @@
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+
+    "header_dark_mode": "Dark mode",
+    "header_light_mode": "Light mode",
+
+    "nav_home": "Home",
+    "nav_blog": "Blog",
+    "nav_tags": "Tags",
+    "nav_resume": "Resume",
+    "nav_contact": "Contact",
+    "nav_search": "Search",
+    "nav_popular_tags": "Popular tags",
+
+    "lang_en": "🇺🇸 English",
+    "lang_de": "🇩🇪 German",
+    "lang_uk": "🇺🇦 Ukrainian",
+
+    "main_title": "Prism Blog",
+    "main_slogan": "A collection of thoughts, ideas, and discoveries about web development, programming, and technology.",
+    "main_about_author": "About author",
+    "main_recent_posts": "Recent posts",
+    "main_view_all_posts": "View all posts",
+    "main_all_posts": "All posts",
+    "main_popular_tags": "Popular tags",
+
+    "time_minutes": "min.",
+
+    "contact_me": "Contact me",
+    "contact_me_description": "If you have any questions or suggestions, please feel free to contact me.",
+    "contact_me_send": "Send",
+    "contact_me_name": "Name",
+    "contact_me_email": "Email",
+    "contact_me_message": "Message"
+}

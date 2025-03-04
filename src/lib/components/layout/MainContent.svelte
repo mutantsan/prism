@@ -4,7 +4,7 @@
 </script>
 
 <main class="w-full">
-	<div class="max-w-5xl">
+	<div class="">
 		<slot />
 	</div>
 </main>

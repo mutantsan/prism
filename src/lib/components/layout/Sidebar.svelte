@@ -1,6 +1,7 @@
 <!-- src/lib/components/layout/Sidebar.svelte -->
 <script lang="ts">
 	import Icon from '$lib/components/ui/Icon.svelte';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
 <aside class="w-64 bg-white dark:bg-gray-800 p-4">
@@ -8,7 +9,7 @@
 	<div class="mb-5">
 		<input
 			type="text"
-			placeholder="Поиск"
+			placeholder="{m.nav_search()}"
 			class="w-full border-1 border-gray-100 dark:border-gray-700 rounded-md px-3 py-2 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-white"
 		/>
 	</div>
@@ -19,31 +20,41 @@
 			<li>
 				<a href="/" class="group flex items-center gap-2 py-2">
 					<Icon name="home" className="h-5 w-5 mr-4 group-hover:text-blue-500" />
-					<span class="group-hover:text-blue-500">Главная</span>
+					<span class="group-hover:text-blue-500">
+                        {m.nav_home()}
+                    </span>
 				</a>
 			</li>
 			<li>
 				<a href="/blog" class="group flex items-center gap-2 py-2">
 					<Icon name="blog" className="h-5 w-5 mr-4 group-hover:text-blue-500" />
-					<span class="group-hover:text-blue-500">Блог</span>
+					<span class="group-hover:text-blue-500">
+                        {m.nav_blog()}
+                    </span>
 				</a>
 			</li>
 			<li>
 				<a href="/tags" class="group flex items-center gap-2 py-2">
 					<Icon name="tag" className="h-5 w-5 mr-4 group-hover:text-blue-500" />
-					<span class="group-hover:text-blue-500">Теги</span>
+					<span class="group-hover:text-blue-500">
+                        {m.nav_tags()}
+                    </span>
 				</a>
 			</li>
 			<li>
 				<a href="/resume" class="group flex items-center gap-2 py-2">
 					<Icon name="user" className="h-5 w-5 mr-4 group-hover:text-blue-500" />
-					<span class="group-hover:text-blue-500">Резюме</span>
+					<span class="group-hover:text-blue-500">
+                        {m.nav_resume()}
+                    </span>
 				</a>
 			</li>
 			<li>
 				<a href="/contact" class="group flex items-center gap-2 py-2">
 					<Icon name="contact" className="h-5 w-5 mr-4 group-hover:text-blue-500" />
-					<span class="group-hover:text-blue-500">Контакты</span>
+					<span class="group-hover:text-blue-500">
+                        {m.nav_contact()}
+                    </span>
 				</a>
 			</li>
 		</ul>
@@ -53,7 +64,9 @@
 
 	<!-- Popular tags -->
 	<div>
-		<h2 class="mb-5 text-xl">Популярные теги</h2>
+		<h2 class="mb-5 text-xl">
+            {m.main_popular_tags()}
+        </h2>
 		<div class="flex flex-wrap gap-2">
 			{#each [
 				{ name: 'SvelteKit', count: 8 },
