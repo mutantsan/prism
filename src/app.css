@@ -1,6 +1,22 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 
-.bg-prism-gray {
-    background-color: #F4F5F6;
+@theme {
+    --color-prism-gray: #F4F5F6;
+    --color-prism-gray-dark: #24282D;
+
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    --color-gray-50: #F0F0F0;
+    --color-gray-100: #EAEAEA;
+    --color-gray-200: #9C9C9C;
+    --color-gray-300: #818181;
+    --color-gray-400: #575757;
+    --color-gray-500: #4F4F4F;
+    --color-gray-600: #484848;
+    --color-gray-700: #3B3F44;
+    --color-gray-800: #33373C;
+    --color-gray-900: #202020;
 }

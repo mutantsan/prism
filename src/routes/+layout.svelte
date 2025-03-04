@@ -6,8 +6,8 @@
 	import MainContent from '$lib/components/layout/MainContent.svelte';
 </script>
 
-<div class="bg-prism-gray">
-	<div class="mx-auto max-w-7xl">
+<div class="min-h-screen bg-prism-gray dark:bg-prism-gray-dark dark:text-white">
+	<div class="mx-auto max-w-6xl">
 		<div class="mb-5">
 			<Header />
 		</div>

@@ -5,11 +5,11 @@
 	const { post } = data;
 </script>
 
-<article class="mx-auto max-w-3xl">
+<article class="mx-auto  bg-white dark:bg-gray-800 p-4">
 	<header class="mb-8">
 		<h1 class="mb-4 text-3xl font-bold">{post.title}</h1>
 
-		<div class="flex items-center text-gray-500">
+		<div class="flex items-center">
 			<span>{new Date(post.created_at).toLocaleDateString()}</span>
 		</div>
 	</header>

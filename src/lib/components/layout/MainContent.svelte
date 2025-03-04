@@ -3,7 +3,7 @@
 	// This component takes a slot to render the page content
 </script>
 
-<main>
+<main class="w-full">
 	<div class="max-w-5xl">
 		<slot />
 	</div>
