@@ -40,7 +40,7 @@
 			{#each data.posts as post}
 				<article class="flex border-b border-gray-100 pb-6 dark:border-gray-300">
 					<div
-						class="mr-6 flex h-35 w-45 items-center justify-center rounded bg-gray-100 dark:bg-gray-300"
+						class="mr-6 flex h-35 min-w-45 w-45 items-center justify-center rounded bg-gray-100 dark:bg-gray-300"
 					>
 						<span class="dark:text-white">Mock image</span>
 					</div>

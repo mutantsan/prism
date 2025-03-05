@@ -2,11 +2,31 @@
 <script lang="ts">
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import * as m from '$lib/paraglide/messages';
+    import { onMount } from 'svelte';
+
+    let sidebar: HTMLElement | null = null;
+
+    onMount(() => {
+        sidebar = document.getElementById('sidebar');
+    });
+
+    function toggleSidebar() {
+        sidebar?.classList.toggle('hidden');
+    }
 </script>
 
-<aside class="w-64 bg-white dark:bg-gray-800 p-4">
+<aside class="md:w-64 w-full bg-white dark:bg-gray-800 p-4">
 	<!-- Search bar -->
-	<div class="mb-5">
+	<div class="mb-5 flex items-center gap-2 ">
+        <!-- Navigation -->
+        <div class="md:hidden toggler top-1 relative">
+            <button
+                on:click={() => toggleSidebar()}
+                class="text-gray-200 dark:text-white">
+                <Icon name="menu" className="h-5 w-5" />
+            </button>
+        </div>
+
 		<input
 			type="text"
 			placeholder="{m.nav_search()}"
@@ -14,8 +34,7 @@
 		/>
 	</div>
 
-	<!-- Navigation -->
-	<nav>
+	<nav id="sidebar" class="hidden md:block">
 		<ul>
 			<li>
 				<a href="/" class="group flex items-center gap-2 py-2">
@@ -60,7 +79,7 @@
 		</ul>
 	</nav>
 
-    <hr class="my-6 text-gray-100 dark:text-gray-300">
+    <hr class="hidden md:block my-6 text-gray-100 dark:text-gray-300">
 
 	<!-- Popular tags -->
 	<div>

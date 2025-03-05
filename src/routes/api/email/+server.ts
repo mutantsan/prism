@@ -7,11 +7,6 @@ import { welcomeEmail } from "$lib/emails/contactMe";
 import { EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO } from '$env/static/private';
 
 export const POST: RequestHandler = async (event) => {
-    // Convert to string first, then parse
-    // Add to the top of your POST handler
-    console.log('Request received:', event.request.method, event.request.url);
-    console.log(EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO);
-
     const body = await event.request.text();
     const { name, email, message } = JSON.parse(body);
 
@@ -31,10 +26,8 @@ export const POST: RequestHandler = async (event) => {
         };
     }
 
-    const transporter = nodemailer.createTransport(transportData);
-
     try {
-        await transporter.sendMail({
+        await nodemailer.createTransport(transportData).sendMail({
             from: email,
             to: EMAIL_TO,
             subject: `New contact from ${name}`,

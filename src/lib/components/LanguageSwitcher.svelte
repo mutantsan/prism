@@ -1,8 +1,7 @@
 <!-- src/lib/components/ui/LanguageSwitcher.svelte -->
 <script lang="ts">
-	import { locales, setLocale } from '$lib/paraglide/runtime';
+	import { locales, setLocale, getLocale } from '$lib/paraglide/runtime';
 	import * as m from '$lib/paraglide/messages';
-	import { page } from '$app/state';
 
 	const languageNames = {
 		en: m.lang_en(),
@@ -23,7 +22,7 @@
 			on:change={(e) => switchLanguage(e.currentTarget.value as 'en' | 'de' | 'uk')}
 		>
 			{#each locales as locale}
-				<option value={locale} selected={locale === page.params.lang}>
+				<option value={locale} selected={locale === getLocale()}>
 					{languageNames[locale]}
 				</option>
 			{/each}

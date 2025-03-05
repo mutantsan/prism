@@ -10,7 +10,7 @@
     let locale = getLocale();
 </script>
 
-<div class="mx-auto bg-white dark:bg-gray-800 p-7">
+<div class="mx-auto bg-white dark:bg-gray-800 px-7 py-6">
 	<h1 class="mb-8 text-3xl font-bold">
         {m.main_all_posts()}
     </h1>
