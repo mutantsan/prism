@@ -10,7 +10,7 @@ export const load: PageLoad = async ({ params }) => {
         .from('posts')
         .select('*')
         .eq('slug', slug)
-        .eq('published', true)
+        .eq('status', 'published')
         .single();
 
     if (postError || !post) {

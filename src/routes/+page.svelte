@@ -1,13 +1,13 @@
 <script lang="ts">
 	export let data;
 
-    import { getLocale } from '$lib/paraglide/runtime';
+	import { getLocale } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
 	import * as m from '$lib/paraglide/messages';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import { calculateReadingTime } from '$lib/utils/readingTime.js';
 
-    const locale = getLocale();
+	const locale = getLocale();
 </script>
 
 <div>
@@ -38,9 +38,9 @@
 
 		<div class="space-y-8">
 			{#each data.posts as post}
-				<article class="flex border-b border-gray-100 pb-6 dark:border-gray-300">
+				<article class="flex flex-col md:flex-row border-b border-gray-100 pb-6 dark:border-gray-300">
 					<div
-						class="mr-6 flex h-35 min-w-45 w-45 items-center justify-center rounded bg-gray-100 dark:bg-gray-300"
+						class="md:mr-6 mb-4 md:mb-0 flex h-55 md:h-35 w-full md:w-45 md:min-w-45 items-center justify-center rounded bg-gray-100 dark:bg-gray-300"
 					>
 						<span class="dark:text-white">Mock image</span>
 					</div>
@@ -58,7 +58,8 @@
 
 							<span class="flex items-center">
 								<Icon name="clock" className="h-4 w-4 mr-2" />
-								{calculateReadingTime(post.content)} {m.time_minutes()}
+								{calculateReadingTime(post.content)}
+								{m.time_minutes()}
 							</span>
 						</div>
 						<h3 class="mb-2 text-xl font-semibold">

@@ -17,12 +17,12 @@
 
 <aside class="md:w-64 w-full bg-white dark:bg-gray-800 p-4">
 	<!-- Search bar -->
-	<div class="mb-5 flex items-center gap-2 ">
+	<div class="mb-2 md:mb-5 flex items-center gap-4">
         <!-- Navigation -->
         <div class="md:hidden toggler top-1 relative">
             <button
                 on:click={() => toggleSidebar()}
-                class="text-gray-200 dark:text-white">
+                class="text-gray-200 dark:text-white cursor-pointer hover:text-blue-500">
                 <Icon name="menu" className="h-5 w-5" />
             </button>
         </div>
@@ -79,11 +79,11 @@
 		</ul>
 	</nav>
 
-    <hr class="hidden md:block my-6 text-gray-100 dark:text-gray-300">
+    <hr class="hidden md:block mt-6 mb-3 text-gray-100 dark:text-gray-300">
 
 	<!-- Popular tags -->
 	<div>
-		<h2 class="mb-5 text-xl">
+		<h2 class="mt-3 mb-5 text-xl">
             {m.main_popular_tags()}
         </h2>
 		<div class="flex flex-wrap gap-2">

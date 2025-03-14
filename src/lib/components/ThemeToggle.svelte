@@ -30,7 +30,7 @@
 </script>
 
 <button
-	class="dark:text-blue-500dark:hover:text-blue-500 flex cursor-pointer items-center gap-2 rounded-full
+	class="hover:text-blue-500 flex cursor-pointer items-center gap-2 rounded-full
         p-2 "
 	onclick={toggleTheme}
 	aria-label={!isDarkMode ? m.header_dark_mode() : m.header_light_mode()}
